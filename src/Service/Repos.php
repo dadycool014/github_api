@@ -22,7 +22,8 @@ class Repos
          'GET',
          "https://api.github.com/search/repositories?q=created:>$endOfCycle&sort=stars&order=desc&per_page=100"
      );
-     return $response->toArray()["items"];
+
+     return $response->toArray();
 
  }
 

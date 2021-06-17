@@ -13,7 +13,10 @@ class GithubController extends AbstractApiController
     public function showAction (Repos $repos) : Response
     {
 
-        $content = $repos->GetRepos();
+if (!isset($repos->GetRepos()["items"])){
+    return $this->respond('Server not responding',Response::HTTP_BAD_REQUEST);
+}
+        $content = $repos->GetRepos()["items"];
 
 //dd($content);
 foreach($content as $value){
