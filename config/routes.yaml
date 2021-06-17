@@ -1,0 +1,13 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+show_repos:
+  path: /api/v1/repos
+  controller: App\Controller\GithubController::showAction
+  methods: [ GET ]
+
+index_repos:
+    path: /
+    controller: App\Controller\GithubController::showAction
+    methods: [ GET ]
+
